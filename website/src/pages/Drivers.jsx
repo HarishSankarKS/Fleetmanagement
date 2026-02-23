@@ -2,12 +2,12 @@ import { useState } from 'react'
 import { Plus, Search, User, Edit2, Trash2, Phone, Award } from 'lucide-react'
 
 const initialDrivers = [
-    { id: 'D-001', name: 'Ali Hassan', license: 'LHR-2019-44521', contact: '0300-1234567', vehicle: 'V-001 (KHI-234)', experience: '7 yrs', status: 'active', trips: 412 },
-    { id: 'D-002', name: 'Sara Khan', license: 'KHI-2021-88765', contact: '0312-9876543', vehicle: 'V-002 (KHI-567)', experience: '4 yrs', status: 'active', trips: 283 },
-    { id: 'D-003', name: 'Usman Raza', license: 'ISB-2018-33210', contact: '0341-5554321', vehicle: 'V-003 (KHI-891)', experience: '9 yrs', status: 'idle', trips: 638 },
-    { id: 'D-004', name: 'Ahmed Shah', license: 'KHI-2020-11098', contact: '0333-6667788', vehicle: 'V-005 (KHI-445)', experience: '5 yrs', status: 'active', trips: 315 },
-    { id: 'D-005', name: 'Fatima Ali', license: 'KHI-2022-55432', contact: '0321-4445566', vehicle: 'V-006 (KHI-778)', experience: '2 yrs', status: 'active', trips: 180 },
-    { id: 'D-006', name: 'Bilal Ahmed', license: 'KHI-2017-22987', contact: '0345-7778899', vehicle: '—', experience: '11 yrs', status: 'idle', trips: 754 },
+    { id: 'D-001', name: 'Murugan R.', license: 'TN09 20190044521', contact: '+91 98401 23456', vehicle: 'V-001 (TN-09-AB-1234)', experience: '7 yrs', status: 'active', trips: 412 },
+    { id: 'D-002', name: 'Kavitha S.', license: 'TN11 20210088765', contact: '+91 94421 98765', vehicle: 'V-002 (TN-11-CD-5678)', experience: '4 yrs', status: 'active', trips: 283 },
+    { id: 'D-003', name: 'Senthil K.', license: 'TN38 20180033210', contact: '+91 97890 55432', vehicle: 'V-003 (TN-38-EF-9012)', experience: '9 yrs', status: 'idle', trips: 638 },
+    { id: 'D-004', name: 'Arjun T.', license: 'TN58 20200011098', contact: '+91 93845 66778', vehicle: 'V-005 (TN-58-IJ-7890)', experience: '5 yrs', status: 'active', trips: 315 },
+    { id: 'D-005', name: 'Priya M.', license: 'TN77 20220055432', contact: '+91 96000 44556', vehicle: 'V-006 (TN-77-KL-2345)', experience: '2 yrs', status: 'active', trips: 180 },
+    { id: 'D-006', name: 'Rajan V.', license: 'TN44 20170022987', contact: '+91 99401 77889', vehicle: '—', experience: '11 yrs', status: 'idle', trips: 754 },
 ]
 
 const emptyForm = { name: '', license: '', contact: '', vehicle: '', experience: '', status: 'active' }
@@ -129,10 +129,10 @@ export default function Drivers() {
                         <div className="modal-body">
                             <div className="form-grid">
                                 {[
-                                    { label: 'Full Name *', key: 'name', placeholder: 'e.g. Bilal Ahmed' },
-                                    { label: 'License No. *', key: 'license', placeholder: 'e.g. KHI-2023-12345' },
-                                    { label: 'Contact', key: 'contact', placeholder: '0300-0000000' },
-                                    { label: 'Assigned Vehicle', key: 'vehicle', placeholder: 'e.g. V-001' },
+                                    { label: 'Full Name *', key: 'name', placeholder: 'e.g. Murugan R.' },
+                                    { label: 'License No. *', key: 'license', placeholder: 'e.g. TN09 2023 12345' },
+                                    { label: 'Contact', key: 'contact', placeholder: '+91 98400 00000' },
+                                    { label: 'Assigned Vehicle', key: 'vehicle', placeholder: 'e.g. V-001 (TN-09-AB-1234)' },
                                     { label: 'Experience', key: 'experience', placeholder: 'e.g. 3 yrs' },
                                 ].map(f => (
                                     <div key={f.key} className="form-group">

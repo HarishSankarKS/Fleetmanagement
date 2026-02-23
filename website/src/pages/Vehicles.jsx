@@ -2,12 +2,12 @@ import { useState } from 'react'
 import { Plus, Search, Truck, Edit2, Trash2, Eye } from 'lucide-react'
 
 const initialVehicles = [
-    { id: 'V-001', number: 'KHI-234', model: 'Toyota Hino', type: 'Truck', status: 'active', driver: 'Ali Hassan', lastService: '2026-01-15', mileage: '48,200 km' },
-    { id: 'V-002', number: 'KHI-567', model: 'Isuzu NPR', type: 'Truck', status: 'active', driver: 'Sara Khan', lastService: '2026-02-01', mileage: '32,100 km' },
-    { id: 'V-003', number: 'KHI-891', model: 'FAW J5', type: 'Heavy Truck', status: 'maintenance', driver: 'Usman Raza', lastService: '2026-02-18', mileage: '71,500 km' },
-    { id: 'V-004', number: 'SHI-112', model: 'Hyundai HD78', type: 'Truck', status: 'idle', driver: '—', lastService: '2026-01-28', mileage: '25,300 km' },
-    { id: 'V-005', number: 'KHI-445', model: 'Toyota Hino 300', type: 'Truck', status: 'active', driver: 'Ahmed Shah', lastService: '2026-02-10', mileage: '55,800 km' },
-    { id: 'V-006', number: 'KHI-778', model: 'MAN TGS', type: 'Heavy Truck', status: 'active', driver: 'Fatima Ali', lastService: '2026-01-05', mileage: '103,200 km' },
+    { id: 'V-001', number: 'TN-09-AB-1234', model: 'Tata 407', type: 'Truck', status: 'active', driver: 'Murugan R.', lastService: '2026-01-15', mileage: '48,200 km' },
+    { id: 'V-002', number: 'TN-11-CD-5678', model: 'Ashok Leyland Dost', type: 'Truck', status: 'active', driver: 'Kavitha S.', lastService: '2026-02-01', mileage: '32,100 km' },
+    { id: 'V-003', number: 'TN-38-EF-9012', model: 'Mahindra Furio', type: 'Heavy Truck', status: 'maintenance', driver: 'Senthil K.', lastService: '2026-02-18', mileage: '71,500 km' },
+    { id: 'V-004', number: 'TN-44-GH-3456', model: 'Eicher Pro 2095', type: 'Truck', status: 'idle', driver: '—', lastService: '2026-01-28', mileage: '25,300 km' },
+    { id: 'V-005', number: 'TN-58-IJ-7890', model: 'Tata LPT 1412', type: 'Truck', status: 'active', driver: 'Arjun T.', lastService: '2026-02-10', mileage: '55,800 km' },
+    { id: 'V-006', number: 'TN-77-KL-2345', model: 'BharatBenz 1617R', type: 'Heavy Truck', status: 'active', driver: 'Priya M.', lastService: '2026-01-05', mileage: '103,200 km' },
 ]
 
 const emptyForm = { number: '', model: '', type: 'Truck', status: 'active', driver: '' }
@@ -127,7 +127,7 @@ export default function Vehicles() {
                             <div className="form-grid">
                                 <div className="form-group">
                                     <label className="form-label">Plate Number *</label>
-                                    <input className="form-input" value={form.number} onChange={e => setForm(p => ({ ...p, number: e.target.value }))} placeholder="e.g. KHI-001" />
+                                    <input className="form-input" value={form.number} onChange={e => setForm(p => ({ ...p, number: e.target.value }))} placeholder="e.g. TN-09-AB-1234" />
                                 </div>
                                 <div className="form-group">
                                     <label className="form-label">Model *</label>

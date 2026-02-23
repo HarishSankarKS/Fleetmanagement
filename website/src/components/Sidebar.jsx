@@ -1,7 +1,7 @@
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import {
     LayoutDashboard, MapPin, Map, BarChart3, Truck, Users,
-    Wrench, CreditCard, Settings, Leaf, ChevronRight
+    Wrench, CreditCard, Settings, ChevronRight
 } from 'lucide-react'
 
 const navItems = [
@@ -32,8 +32,12 @@ export default function Sidebar() {
     return (
         <aside className="sidebar">
             <div className="sidebar-brand">
-                <div className="sidebar-brand-icon">
-                    <Leaf size={18} color="#fff" />
+                <div className="sidebar-brand-icon" style={{ background: 'transparent', border: 'none', padding: 0 }}>
+                    <img
+                        src="/Fleetmanagement/greenie-logo.png"
+                        alt="GREENIE"
+                        style={{ width: 40, height: 40, objectFit: 'contain', borderRadius: 4 }}
+                    />
                 </div>
                 <div className="sidebar-brand-text">
                     <span className="sidebar-brand-name">Smart C&D Waste</span>
@@ -62,8 +66,9 @@ export default function Sidebar() {
             <div className="sidebar-footer">
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                     <div style={{
-                        width: 34, height: 34, borderRadius: 8,
-                        background: 'linear-gradient(135deg, #0f766e, #14b8a6)',
+                        width: 34, height: 34, borderRadius: 4,
+                        background: 'var(--color-primary-dark)',
+                        border: '2px solid var(--color-accent)',
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                         color: '#fff', fontSize: 12, fontWeight: 700
                     }}>AD</div>

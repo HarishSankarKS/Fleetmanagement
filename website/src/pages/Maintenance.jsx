@@ -3,12 +3,12 @@ import { Plus, Search, Wrench, Edit2, Trash2, DollarSign } from 'lucide-react'
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts'
 
 const initialRecords = [
-    { id: 'M-001', vehicle: 'KHI-234', vehicleId: 'V-001', date: '2026-01-15', cost: 12500, desc: 'Engine oil change, filter replacement', status: 'completed' },
-    { id: 'M-002', vehicle: 'KHI-891', vehicleId: 'V-003', date: '2026-02-18', cost: 45000, desc: 'Transmission repair and brake overhaul', status: 'active' },
-    { id: 'M-003', vehicle: 'KHI-567', vehicleId: 'V-002', date: '2026-02-01', cost: 8200, desc: 'Tire rotation and alignment check', status: 'completed' },
-    { id: 'M-004', vehicle: 'KHI-445', vehicleId: 'V-005', date: '2026-02-10', cost: 18700, desc: 'Hydraulic system maintenance', status: 'completed' },
-    { id: 'M-005', vehicle: 'SHI-112', vehicleId: 'V-004', date: '2026-02-25', cost: 32000, desc: 'Full engine overhaul scheduled', status: 'pending' },
-    { id: 'M-006', vehicle: 'KHI-778', vehicleId: 'V-006', date: '2026-01-05', cost: 6800, desc: 'Coolant flush and radiator cleaning', status: 'completed' },
+    { id: 'M-001', vehicle: 'TN-09-AB-1234', vehicleId: 'V-001', date: '2026-01-15', cost: 12500, desc: 'Engine oil change, filter replacement', status: 'completed' },
+    { id: 'M-002', vehicle: 'TN-38-EF-9012', vehicleId: 'V-003', date: '2026-02-18', cost: 45000, desc: 'Transmission repair and brake overhaul', status: 'active' },
+    { id: 'M-003', vehicle: 'TN-11-CD-5678', vehicleId: 'V-002', date: '2026-02-01', cost: 8200, desc: 'Tire rotation and alignment check', status: 'completed' },
+    { id: 'M-004', vehicle: 'TN-58-IJ-7890', vehicleId: 'V-005', date: '2026-02-10', cost: 18700, desc: 'Hydraulic system maintenance', status: 'completed' },
+    { id: 'M-005', vehicle: 'TN-44-GH-3456', vehicleId: 'V-004', date: '2026-02-25', cost: 32000, desc: 'Full engine overhaul scheduled', status: 'pending' },
+    { id: 'M-006', vehicle: 'TN-77-KL-2345', vehicleId: 'V-006', date: '2026-01-05', cost: 6800, desc: 'Coolant flush and radiator cleaning', status: 'completed' },
 ]
 
 const costByMonth = [
@@ -59,7 +59,7 @@ export default function Maintenance() {
                     { label: 'Total Records', value: records.length, color: 'teal' },
                     { label: 'Active (In Service)', value: records.filter(r => r.status === 'active').length, color: 'amber' },
                     { label: 'Pending', value: records.filter(r => r.status === 'pending').length, color: 'blue' },
-                    { label: 'Total Cost', value: `PKR ${(totalCost / 1000).toFixed(0)}K`, color: 'red' },
+                    { label: 'Total Cost', value: `₹${(totalCost / 1000).toFixed(0)}K`, color: 'red' },
                 ].map(k => (
                     <div key={k.label} className={`kpi-card ${k.color}`}>
                         <div className="kpi-label">{k.label}</div>
@@ -77,7 +77,7 @@ export default function Maintenance() {
                                 <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
                                 <XAxis dataKey="month" tick={{ fontSize: 12 }} axisLine={false} tickLine={false} />
                                 <YAxis tick={{ fontSize: 11 }} axisLine={false} tickLine={false} tickFormatter={v => `${v / 1000}K`} />
-                                <Tooltip formatter={v => [`PKR ${v.toLocaleString()}`, 'Cost']} contentStyle={{ borderRadius: 8, fontSize: 12 }} />
+                                <Tooltip formatter={v => [`₹${v.toLocaleString()}`, 'Cost']} contentStyle={{ borderRadius: 8, fontSize: 12 }} />
                                 <Bar dataKey="cost" fill="#ef4444" radius={[4, 4, 0, 0]} />
                             </BarChart>
                         </ResponsiveContainer>
@@ -133,7 +133,7 @@ export default function Maintenance() {
                                     <td>
                                         <div style={{ display: 'flex', alignItems: 'center', gap: 4, fontWeight: 600 }}>
                                             <DollarSign size={12} style={{ color: 'var(--color-text-muted)' }} />
-                                            PKR {r.cost.toLocaleString()}
+                                            ₹{r.cost.toLocaleString()}
                                         </div>
                                     </td>
                                     <td><span className={`status-badge ${r.status === 'active' ? 'idle' : r.status}`}><span className="dot" />{r.status.charAt(0).toUpperCase() + r.status.slice(1)}</span></td>
@@ -158,14 +158,14 @@ export default function Maintenance() {
                             <div className="form-grid">
                                 <div className="form-group">
                                     <label className="form-label">Vehicle Plate *</label>
-                                    <input className="form-input" value={form.vehicle} onChange={e => setForm(p => ({ ...p, vehicle: e.target.value }))} placeholder="e.g. KHI-001" />
+                                    <input className="form-input" value={form.vehicle} onChange={e => setForm(p => ({ ...p, vehicle: e.target.value }))} placeholder="e.g. TN-09-AB-1234" />
                                 </div>
                                 <div className="form-group">
                                     <label className="form-label">Date *</label>
                                     <input className="form-input" type="date" value={form.date} onChange={e => setForm(p => ({ ...p, date: e.target.value }))} />
                                 </div>
                                 <div className="form-group">
-                                    <label className="form-label">Cost (PKR)</label>
+                                    <label className="form-label">Cost (₹)</label>
                                     <input className="form-input" type="number" value={form.cost} onChange={e => setForm(p => ({ ...p, cost: e.target.value }))} placeholder="e.g. 15000" />
                                 </div>
                                 <div className="form-group">

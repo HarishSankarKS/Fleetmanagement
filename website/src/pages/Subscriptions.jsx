@@ -3,7 +3,7 @@ import { CheckCircle, Star, Zap, Shield, ArrowRight } from 'lucide-react'
 const plans = [
     {
         name: 'Basic',
-        price: 'PKR 5,000',
+        price: '₹5,000',
         period: '/month',
         desc: 'For small municipalities and pilot projects',
         color: 'teal',
@@ -13,7 +13,7 @@ const plans = [
     },
     {
         name: 'Professional',
-        price: 'PKR 15,000',
+        price: '₹15,000',
         period: '/month',
         desc: 'For mid-sized city operations',
         color: 'blue',
@@ -23,7 +23,7 @@ const plans = [
     },
     {
         name: 'Enterprise',
-        price: 'PKR 35,000',
+        price: '₹35,000',
         period: '/month',
         desc: 'Full-scale smart city deployment',
         color: 'green',
@@ -118,10 +118,10 @@ export default function Subscriptions() {
                         </thead>
                         <tbody>
                             {[
-                                { inv: 'INV-2026-002', date: '2026-02-01', plan: 'Professional', amount: 'PKR 15,000', status: 'paid' },
-                                { inv: 'INV-2026-001', date: '2026-01-01', plan: 'Professional', amount: 'PKR 15,000', status: 'paid' },
-                                { inv: 'INV-2025-012', date: '2025-12-01', plan: 'Professional', amount: 'PKR 15,000', status: 'paid' },
-                                { inv: 'INV-2025-011', date: '2025-11-01', plan: 'Basic', amount: 'PKR 5,000', status: 'paid' },
+                                { inv: 'INV-2026-002', date: '2026-02-01', plan: 'Professional', amount: '₹15,000', status: 'paid' },
+                                { inv: 'INV-2026-001', date: '2026-01-01', plan: 'Professional', amount: '₹15,000', status: 'paid' },
+                                { inv: 'INV-2025-012', date: '2025-12-01', plan: 'Professional', amount: '₹15,000', status: 'paid' },
+                                { inv: 'INV-2025-011', date: '2025-11-01', plan: 'Basic', amount: '₹5,000', status: 'paid' },
                             ].map(r => (
                                 <tr key={r.inv}>
                                     <td style={{ fontWeight: 500 }}>{r.inv}</td>

@@ -31,14 +31,14 @@ const icons = {
 }
 
 const sites = [
-    { id: 'CS-001', name: 'Downtown Hub Alpha', lat: 24.876, lng: 67.003, status: 'active', type: 'C&D Waste', lastUpdate: '5 min ago' },
-    { id: 'CS-002', name: 'North Zone Depot', lat: 24.912, lng: 67.031, status: 'active', type: 'Mixed Debris', lastUpdate: '12 min ago' },
-    { id: 'CS-003', name: 'South Bridge Site', lat: 24.843, lng: 66.987, status: 'idle', type: 'Concrete Rubble', lastUpdate: '1 hr ago' },
-    { id: 'CS-004', name: 'Industrial Park Hub', lat: 24.891, lng: 67.062, status: 'active', type: 'C&D Waste', lastUpdate: '2 min ago' },
-    { id: 'CS-005', name: 'West Corridor Base', lat: 24.867, lng: 66.951, status: 'maintenance', type: 'Mixed Waste', lastUpdate: '3 hr ago' },
-    { id: 'CS-006', name: 'East Gateway', lat: 24.855, lng: 67.088, status: 'active', type: 'C&D Waste', lastUpdate: '8 min ago' },
-    { id: 'CS-007', name: 'Clifton Depot', lat: 24.814, lng: 67.028, status: 'idle', type: 'C&D Waste', lastUpdate: '45 min ago' },
-    { id: 'CS-008', name: 'Korangi Site', lat: 24.836, lng: 67.094, status: 'active', type: 'Rubble', lastUpdate: '18 min ago' },
+    { id: 'CS-001', name: 'Chennai Central Hub', lat: 13.0827, lng: 80.2707, status: 'active', type: 'C&D Waste', lastUpdate: '5 min ago' },
+    { id: 'CS-002', name: 'Coimbatore North Depot', lat: 11.0168, lng: 76.9558, status: 'active', type: 'Mixed Debris', lastUpdate: '12 min ago' },
+    { id: 'CS-003', name: 'Madurai South Site', lat: 9.9252, lng: 78.1198, status: 'idle', type: 'Concrete Rubble', lastUpdate: '1 hr ago' },
+    { id: 'CS-004', name: 'Salem Industrial Hub', lat: 11.6643, lng: 78.1460, status: 'active', type: 'C&D Waste', lastUpdate: '2 min ago' },
+    { id: 'CS-005', name: 'Trichy West Base', lat: 10.7905, lng: 78.7047, status: 'maintenance', type: 'Mixed Waste', lastUpdate: '3 hr ago' },
+    { id: 'CS-006', name: 'Tirunelveli Gateway', lat: 8.7139, lng: 77.7567, status: 'active', type: 'C&D Waste', lastUpdate: '8 min ago' },
+    { id: 'CS-007', name: 'Vellore Depot', lat: 12.9165, lng: 79.1325, status: 'idle', type: 'C&D Waste', lastUpdate: '45 min ago' },
+    { id: 'CS-008', name: 'Erode Collection Site', lat: 11.3410, lng: 77.7172, status: 'active', type: 'Rubble', lastUpdate: '18 min ago' },
 ]
 
 export default function Monitoring() {
@@ -99,8 +99,8 @@ export default function Monitoring() {
                     </div>
                     <div style={{ height: 480 }}>
                         <MapContainer
-                            center={[24.867, 67.020]}
-                            zoom={12}
+                            center={[11.1, 78.6]}
+                            zoom={7}
                             style={{ height: '100%', width: '100%' }}
                         >
                             <TileLayer

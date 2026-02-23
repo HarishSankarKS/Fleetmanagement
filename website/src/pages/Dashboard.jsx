@@ -25,11 +25,11 @@ const statusData = [
 ]
 
 const recentActivity = [
-    { id: 'U-001', site: 'Downtown Hub A', type: 'C&D Waste', status: 'completed', time: '10 min ago', driver: 'Ali Hassan' },
-    { id: 'U-012', site: 'North Zone Depot', type: 'Mixed Debris', status: 'active', time: '25 min ago', driver: 'Sara Khan' },
-    { id: 'U-034', site: 'Industrial Park', type: 'Concrete', status: 'pending', time: '1 hr ago', driver: 'Usman Raza' },
-    { id: 'U-007', site: 'South Bridge Site', type: 'C&D Waste', status: 'maintenance', time: '2 hr ago', driver: 'Fatima Ali' },
-    { id: 'U-019', site: 'West Corridor', type: 'Rubble', status: 'completed', time: '3 hr ago', driver: 'Ahmed Shah' },
+    { id: 'U-001', site: 'Chennai Central Hub', type: 'C&D Waste', status: 'completed', time: '10 min ago', driver: 'Murugan R.' },
+    { id: 'U-012', site: 'Coimbatore North Depot', type: 'Mixed Debris', status: 'active', time: '25 min ago', driver: 'Kavitha S.' },
+    { id: 'U-034', site: 'Salem Industrial Hub', type: 'Concrete', status: 'pending', time: '1 hr ago', driver: 'Senthil K.' },
+    { id: 'U-007', site: 'Madurai South Site', type: 'C&D Waste', status: 'maintenance', time: '2 hr ago', driver: 'Priya M.' },
+    { id: 'U-019', site: 'Trichy West Base', type: 'Rubble', status: 'completed', time: '3 hr ago', driver: 'Arjun T.' },
 ]
 
 const kpis = [

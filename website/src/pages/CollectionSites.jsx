@@ -2,12 +2,12 @@ import { useState } from 'react'
 import { Plus, Search, MapPin, Edit2, Trash2, Eye } from 'lucide-react'
 
 const initialSites = [
-    { id: 'CS-001', name: 'Downtown Hub Alpha', location: 'Block 4, City Centre', type: 'C&D Waste', capacity: '50 tons', status: 'active', units: 8, lastCollection: '2026-02-21' },
-    { id: 'CS-002', name: 'North Zone Depot', location: 'Industrial Area North', type: 'Mixed Debris', capacity: '80 tons', status: 'active', units: 12, lastCollection: '2026-02-20' },
-    { id: 'CS-003', name: 'South Bridge Site', location: 'Bridge Road, Sector 7', type: 'Concrete Rubble', capacity: '30 tons', status: 'idle', units: 4, lastCollection: '2026-02-19' },
-    { id: 'CS-004', name: 'Industrial Park Hub', location: 'Export Processing Zone', type: 'C&D Waste', capacity: '120 tons', status: 'active', units: 15, lastCollection: '2026-02-21' },
-    { id: 'CS-005', name: 'West Corridor Base', location: 'Western Bypass Zone', type: 'Mixed Waste', capacity: '60 tons', status: 'maintenance', units: 6, lastCollection: '2026-02-18' },
-    { id: 'CS-006', name: 'East Gateway Station', location: 'East Highway Entry', type: 'C&D Waste', capacity: '45 tons', status: 'active', units: 9, lastCollection: '2026-02-21' },
+    { id: 'CS-001', name: 'Chennai Central Hub', location: 'Anna Salai, Chennai', type: 'C&D Waste', capacity: '50 tons', status: 'active', units: 8, lastCollection: '2026-02-21' },
+    { id: 'CS-002', name: 'Coimbatore North Depot', location: 'Ganapathy, Coimbatore', type: 'Mixed Debris', capacity: '80 tons', status: 'active', units: 12, lastCollection: '2026-02-20' },
+    { id: 'CS-003', name: 'Madurai South Site', location: 'Mattuthavani, Madurai', type: 'Concrete Rubble', capacity: '30 tons', status: 'idle', units: 4, lastCollection: '2026-02-19' },
+    { id: 'CS-004', name: 'Salem Industrial Hub', location: 'Ammapet Industrial Area, Salem', type: 'C&D Waste', capacity: '120 tons', status: 'active', units: 15, lastCollection: '2026-02-21' },
+    { id: 'CS-005', name: 'Trichy West Base', location: 'Ariyamangalam, Trichy', type: 'Mixed Waste', capacity: '60 tons', status: 'maintenance', units: 6, lastCollection: '2026-02-18' },
+    { id: 'CS-006', name: 'Tirunelveli Gateway', location: 'Palayamkottai, Tirunelveli', type: 'C&D Waste', capacity: '45 tons', status: 'active', units: 9, lastCollection: '2026-02-21' },
 ]
 
 export default function CollectionSites() {

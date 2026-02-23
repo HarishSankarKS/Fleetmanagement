@@ -14,7 +14,7 @@ import './index.css'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Fleetmanagement">
       <div className="app-layout">
         <Sidebar />
         <div className="main-area">

@@ -23,11 +23,11 @@ const wasteByType = [
 ]
 
 const sitePerf = [
-    { site: 'Downtown Hub', efficiency: 94, collections: 78 },
-    { site: 'North Depot', efficiency: 87, collections: 92 },
-    { site: 'Industrial Park', efficiency: 91, collections: 105 },
-    { site: 'West Corridor', efficiency: 76, collections: 54 },
-    { site: 'East Gateway', efficiency: 89, collections: 68 },
+    { site: 'Chennai Central Hub', efficiency: 94, collections: 78 },
+    { site: 'Coimbatore North Depot', efficiency: 87, collections: 92 },
+    { site: 'Salem Industrial Hub', efficiency: 91, collections: 105 },
+    { site: 'Trichy West Base', efficiency: 76, collections: 54 },
+    { site: 'Tirunelveli Gateway', efficiency: 89, collections: 68 },
 ]
 
 export default function Analytics() {
@@ -50,7 +50,7 @@ export default function Analytics() {
                     { label: 'Total Collections', value: '2,443', change: '+18%', color: 'teal' },
                     { label: 'Total Waste Collected', value: '355 T', change: '+12%', color: 'green' },
                     { label: 'Avg. per Site/Day', value: '14.2', change: '+5%', color: 'blue' },
-                    { label: 'Revenue Generated', value: 'PKR 659K', change: '+22%', color: 'amber' },
+                    { label: 'Revenue Generated', value: '₹659K', change: '+22%', color: 'amber' },
                 ].map(k => (
                     <div key={k.label} className={`kpi-card ${k.color}`}>
                         <div className="kpi-label">{k.label}</div>
