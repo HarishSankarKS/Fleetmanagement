@@ -17,6 +17,9 @@ export default function App() {
   return (
     <BrowserRouter basename="/Fleetmanagement">
       <Routes>
+        {/* Root → login redirect at the top level so it fires before /* */}
+        <Route path="/" element={<Navigate to="/login" replace />} />
+
         {/* Standalone full-screen routes — no sidebar/topbar */}
         <Route path="/login" element={<Login />} />
 
@@ -28,7 +31,6 @@ export default function App() {
               <TopBar />
               <main className="page-content">
                 <Routes>
-                  <Route path="/" element={<Navigate to="/login" replace />} />
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/collection-sites" element={<CollectionSites />} />
                   <Route path="/monitoring" element={<Monitoring />} />
