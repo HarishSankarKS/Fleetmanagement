@@ -28,7 +28,7 @@ export default function App() {
               <TopBar />
               <main className="page-content">
                 <Routes>
-                  <Route path="/" element={<Navigate to="/dashboard" replace />} />
+                  <Route path="/" element={<Navigate to="/login" replace />} />
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/collection-sites" element={<CollectionSites />} />
                   <Route path="/monitoring" element={<Monitoring />} />
