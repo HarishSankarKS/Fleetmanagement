@@ -60,7 +60,7 @@ export default function TopBar() {
                 <div ref={dropRef} style={{ position: 'relative' }}>
                     <div
                         className="avatar"
-                        title="Admin User"
+                        title="Fleet Admin"
                         onClick={() => setDropOpen(o => !o)}
                         style={{
                             cursor: 'pointer', display: 'flex', alignItems: 'center',
@@ -91,8 +91,8 @@ export default function TopBar() {
                                 padding: '12px 16px', borderBottom: '1px solid #eaecf0',
                                 background: '#f8f9fb',
                             }}>
-                                <div style={{ fontSize: 13, fontWeight: 700, color: '#1a1a2e' }}>Admin User</div>
-                                <div style={{ fontSize: 11.5, color: '#5a6478', marginTop: 2 }}>admin@city.gov</div>
+                                <div style={{ fontSize: 13, fontWeight: 700, color: '#1a1a2e' }}>Fleet Admin</div>
+                                <div style={{ fontSize: 11.5, color: '#5a6478', marginTop: 2 }}>admin@greenie.ac.in</div>
                             </div>
 
                             {/* Items */}

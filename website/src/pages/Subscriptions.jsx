@@ -5,7 +5,7 @@ const plans = [
         name: 'Basic',
         price: '₹5,000',
         period: '/month',
-        desc: 'For small municipalities and pilot projects',
+        desc: 'For small businesses and pilot projects',
         color: 'teal',
         icon: Zap,
         features: ['Up to 10 collection sites', 'Basic dashboard', 'Map monitoring', 'Email support', 'Monthly reports'],

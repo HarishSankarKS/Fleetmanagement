@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Mail, Lock, Eye, EyeOff, ArrowRight, CheckCircle, Shield, Truck, ChevronRight } from 'lucide-react'
+import { Mail, Lock, Eye, EyeOff, ArrowRight, CheckCircle, Shield, Truck, ChevronRight, Phone } from 'lucide-react'
 
 const TRUST_BULLETS = [
     'Real-time fleet tracking across all zones',
     'SLA compliance reporting, audit-ready',
-    'Trusted by 12 municipalities across Tamil Nadu',
+    'Trusted by 12+ enterprises across Tamil Nadu',
 ]
 
-const CLIENTS = ['Chennai Corp', 'Coimbatore MC', 'Madurai Corp']
+const CLIENTS = ['Ramky Enviro', 'L&T Realty', 'Ashoka Buildcon']
 
 export default function Login() {
     const navigate = useNavigate()
@@ -23,10 +23,27 @@ export default function Login() {
         e.preventDefault()
         setError('')
         if (!email || !password) { setError('Please enter your credentials.'); return }
+
+        // Admin: must be @greenie.ac.in
+        if (tab === 'admin') {
+            if (!email.toLowerCase().endsWith('@greenie.ac.in')) {
+                setError('Admin access requires a @greenie.ac.in email address.'); return
+            }
+        }
+
+        // Client Portal: email or Indian phone (10 digits, starts with 6-9)
+        if (tab === 'portal') {
+            const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+            const isPhone = /^[6-9]\d{9}$/.test(email.replace(/\s/g, ''))
+            if (!isEmail && !isPhone) {
+                setError('Please enter a valid email address or 10-digit Indian phone number.'); return
+            }
+        }
+
         setLoading(true)
         setTimeout(() => {
             setLoading(false)
-            navigate('/dashboard')
+            navigate(tab === 'portal' ? '/portal/dashboard' : '/dashboard')
         }, 1000)
     }
 
@@ -204,19 +221,19 @@ export default function Login() {
                         )}
 
                         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
-                            {/* Email */}
+                            {/* Email / Phone */}
                             <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                                 <label style={{ fontSize: 12.5, fontWeight: 600, color: '#1a1a2e' }}>
-                                    Organisation Email
+                                    {tab === 'admin' ? 'Admin Email' : 'Email or Phone Number'}
                                 </label>
                                 <div style={{ position: 'relative' }}>
-                                    <Mail size={15} style={{
-                                        position: 'absolute', left: 13, top: '50%', transform: 'translateY(-50%)',
-                                        color: '#9aa3b2', pointerEvents: 'none',
-                                    }} />
+                                    {tab === 'admin'
+                                        ? <Mail size={15} style={{ position: 'absolute', left: 13, top: '50%', transform: 'translateY(-50%)', color: '#9aa3b2', pointerEvents: 'none' }} />
+                                        : <Phone size={15} style={{ position: 'absolute', left: 13, top: '50%', transform: 'translateY(-50%)', color: '#9aa3b2', pointerEvents: 'none' }} />
+                                    }
                                     <input
-                                        type="email"
-                                        placeholder="you@organisation.gov.in"
+                                        type="text"
+                                        placeholder={tab === 'admin' ? 'yourname@greenie.ac.in' : 'email@example.com or 9876543210'}
                                         value={email}
                                         onChange={e => setEmail(e.target.value)}
                                         style={{
@@ -231,6 +248,9 @@ export default function Login() {
                                         onBlur={e => { e.target.style.borderColor = '#dce1ea'; e.target.style.boxShadow = 'none' }}
                                     />
                                 </div>
+                                {tab === 'admin' && (
+                                    <span style={{ fontSize: 11, color: '#5a6478', marginTop: 2 }}>Only @greenie.ac.in emails are allowed</span>
+                                )}
                             </div>
 
                             {/* Password */}
@@ -317,14 +337,14 @@ export default function Login() {
                                     background: 'none', border: 'none', cursor: 'pointer',
                                     fontSize: 12.5, color: '#5a6478',
                                 }}>
-                                    Fleet operator? <span style={{ color: '#1a3263', fontWeight: 600 }}>Admin Login <ChevronRight size={11} style={{ verticalAlign: 'middle' }} /></span>
+                                    Operations team? <span style={{ color: '#1a3263', fontWeight: 600 }}>Admin Login <ChevronRight size={11} style={{ verticalAlign: 'middle' }} /></span>
                                 </button>
                             ) : (
                                 <button onClick={() => setTab('portal')} style={{
                                     background: 'none', border: 'none', cursor: 'pointer',
                                     fontSize: 12.5, color: '#5a6478',
                                 }}>
-                                    Admin officer? <span style={{ color: '#1a3263', fontWeight: 600 }}>Client Portal <ChevronRight size={11} style={{ verticalAlign: 'middle' }} /></span>
+                                    Business client? <span style={{ color: '#1a3263', fontWeight: 600 }}>Client Portal <ChevronRight size={11} style={{ verticalAlign: 'middle' }} /></span>
                                 </button>
                             )}
                         </div>

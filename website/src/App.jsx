@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Sidebar from './components/Sidebar'
 import TopBar from './components/TopBar'
+import ClientPortalLayout from './components/ClientPortalLayout'
 import Dashboard from './pages/Dashboard'
 import CollectionSites from './pages/CollectionSites'
 import Monitoring from './pages/Monitoring'
@@ -11,19 +12,48 @@ import Maintenance from './pages/Maintenance'
 import Subscriptions from './pages/Subscriptions'
 import Settings from './pages/Settings'
 import Login from './pages/Login'
+import ClientDashboard from './pages/portal/ClientDashboard'
+import ClientLiveMap from './pages/portal/ClientLiveMap'
+import ClientActivityLog from './pages/portal/ClientActivityLog'
+import ClientSLAReports from './pages/portal/ClientSLAReports'
+import ClientBilling from './pages/portal/ClientBilling'
+import ClientComplaints from './pages/portal/ClientComplaints'
+import ClientProfile from './pages/portal/ClientProfile'
+import ClientNotifications from './pages/portal/ClientNotifications'
+import ClientEPRScorecard from './pages/portal/ClientEPRScorecard'
+import ClientCollectionRequest from './pages/portal/ClientCollectionRequest'
 import './index.css'
 
 export default function App() {
   return (
     <BrowserRouter basename="/Fleetmanagement">
       <Routes>
-        {/* Root → login redirect at the top level so it fires before /* */}
+        {/* Root → login */}
         <Route path="/" element={<Navigate to="/login" replace />} />
 
-        {/* Standalone full-screen routes — no sidebar/topbar */}
+        {/* Standalone */}
         <Route path="/login" element={<Login />} />
 
-        {/* Main app layout */}
+        {/* Client Portal */}
+        <Route path="/portal/*" element={
+          <ClientPortalLayout>
+            <Routes>
+              <Route path="/" element={<Navigate to="/portal/dashboard" replace />} />
+              <Route path="/dashboard" element={<ClientDashboard />} />
+              <Route path="/map" element={<ClientLiveMap />} />
+              <Route path="/activity" element={<ClientActivityLog />} />
+              <Route path="/sla" element={<ClientSLAReports />} />
+              <Route path="/billing" element={<ClientBilling />} />
+              <Route path="/complaints" element={<ClientComplaints />} />
+              <Route path="/profile" element={<ClientProfile />} />
+              <Route path="/notifications" element={<ClientNotifications />} />
+              <Route path="/epr" element={<ClientEPRScorecard />} />
+              <Route path="/request" element={<ClientCollectionRequest />} />
+            </Routes>
+          </ClientPortalLayout>
+        } />
+
+        {/* Admin layout */}
         <Route path="/*" element={
           <div className="app-layout">
             <Sidebar />

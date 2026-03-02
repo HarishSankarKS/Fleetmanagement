@@ -3,10 +3,10 @@ import { User, Bell, Lock, Globe, Palette, Save, Building } from 'lucide-react'
 
 export default function Settings() {
     const [profile, setProfile] = useState({
-        name: 'Admin User',
-        email: 'admin@city.gov',
+        name: 'Fleet Admin',
+        email: 'admin@greenie.ac.in',
         role: 'System Administrator',
-        organization: 'City Waste Management Authority',
+        organization: 'GREENIE Fleet Solutions',
         phone: '021-99203099',
     })
 

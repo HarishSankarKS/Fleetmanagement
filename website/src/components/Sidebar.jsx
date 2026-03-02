@@ -73,8 +73,8 @@ export default function Sidebar() {
                         color: '#fff', fontSize: 12, fontWeight: 700
                     }}>AD</div>
                     <div style={{ flex: 1 }}>
-                        <div style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.85)' }}>Admin User</div>
-                        <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)' }}>admin@city.gov</div>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.85)' }}>Fleet Admin</div>
+                        <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)' }}>admin@greenie.ac.in</div>
                     </div>
                 </div>
             </div>
